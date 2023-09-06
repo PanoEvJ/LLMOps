@@ -1,0 +1,76 @@
+{
+    "os": "Linux-6.2.0-31-generic-x86_64-with-glibc2.35",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-09-05T23:50:47.955701",
+    "startedAt": "2023-09-05T23:50:47.184943",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "./wandb_notebook.ipynb",
+    "git": {
+        "remote": "git@github.com:PanoEvJ/LLMOps.git",
+        "commit": "a238ab731da793f6bb1b406d5ddbb9e1dcc4970d"
+    },
+    "email": "panosevag@gmail.com",
+    "root": "/home/pevj/my-repos/LLMOps",
+    "host": "pevj",
+    "username": "pevj",
+    "executable": "/home/pevj/anaconda3/envs/llm/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2.6092500000000003,
+        "min": 400.0,
+        "max": 4000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.699,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        },
+        {
+            "current": 2.7,
+            "min": 400.0,
+            "max": 4000.0
+        }
+    ],
+    "disk": {
+        "total": 153.77081680297852,
+        "used": 127.98875045776367
+    },
+    "memory": {
+        "total": 7.469577789306641
+    }
+}
