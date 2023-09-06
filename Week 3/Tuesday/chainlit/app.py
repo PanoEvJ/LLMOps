@@ -13,6 +13,43 @@ import os
 import arxiv
 import chainlit as cl
 from chainlit import user_session
+from langchain.llms.base import LLM
+from typing import Any, List, Mapping, Optional
+from langchain.callbacks.manager import CallbackManagerForLLMRun
+import requests
+
+class Llama2FastAPI(LLM):
+    max_new_tokens: int = 256
+    top_p: float = 0.9
+    temperature: float = 0.1
+
+    @property
+    def _llm_type(self) -> str:
+        return "Llama2FastAPI"
+
+    def _call(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+    ) -> str:
+        if stop is not None:
+            raise ValueError("stop kwargs are not permitted.")
+
+        json_body = {
+            "inputs" : [
+              [{"role" : "user", "content" : prompt}]
+            ],
+            "parameters" : {
+                "max_new_tokens" : self.max_new_tokens,
+                "top_p" : self.top_p,
+                "temperature" : self.temperature
+            }
+        }
+
+        response = requests.post("http://13.48.25.94:8000/generateText", json=json_body) 
+
+        return response.json()[0]["generation"]["content"]
 
 @cl.langchain_factory(use_async=True)
 async def init():
